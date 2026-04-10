@@ -1,0 +1,43 @@
+cd yolo_rtmp_api 
+启动：uvicorn app.api:app --host 0.0.0.0 --port 8000 --workers 1
+=========================================================
+后端 API 开发环境说明
+
+1 建立 SSH 隧道
+
+ssh -N -L 8892:localhost:8892 sente@121.61.252.97 -p 122
+
+连接成功后，本地 8892 端口会映射到服务器 API。
+
+2 API Base URL
+
+http://localhost:8892
+
+3 API 文档
+
+http://localhost:8892/docs
+
+4 示例
+
+获取检测结果：
+
+curl http://localhost:8892/detection
+
+返回示例：
+StatusCode        : 200
+StatusDescription : OK
+Content           : {"detections":0,"fps":6.167268116173743,"frame_count":14052,"last_ts":1773213814.2718782}
+RawContent        : HTTP/1.1 200 OK
+                    Content-Length: 89
+                    Content-Type: application/json
+                    Date: Wed, 11 Mar 2026 07:23:34 GMT
+                    Server: uvicorn
+
+                    {"detections":0,"fps":6.167268116173743,"frame_count":14052,"last_ts":17732...
+Forms             : {}
+Headers           : {[Content-Length, 89], [Content-Type, application/json], [Date, Wed, 11 Mar 2026 07:23:34 GMT], [Server, uvicorn]}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 89

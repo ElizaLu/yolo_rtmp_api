@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run FastAPI (uvicorn)",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "cwd": "/home/sente/yolo_rtmp_api",
+      "python": "/home/sente/anaconda3/envs/pytorch_env/bin/python",
+      "args": [
+        "app.api:app",
+        "--host", "0.0.0.0",
+        "--port", "8000",
+        "--workers", "1"
+      ],
+      "jinja": true
+    }
+  ]
+}

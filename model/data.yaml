@@ -1,0 +1,8 @@
+path: /home/sente/yolo_rtmp_api/model/data
+
+train: images/train
+val: images/train
+
+nc: 1
+
+names: ['isolating_pile']
