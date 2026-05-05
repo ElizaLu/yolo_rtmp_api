@@ -82,7 +82,10 @@ sudo systemctl start yolo-mqtt-worker
 ```bash
 sudo systemctl status yolo-mqtt-worker
 ```
-
+重启：
+```
+sudo systemctl start yolo-mqtt-worker
+```
 看实时日志：
 
 ```bash

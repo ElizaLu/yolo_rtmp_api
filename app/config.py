@@ -4,7 +4,7 @@ import torch
 
 RTMP_URL = os.getenv("RTMP_URL", "rtsp://121.61.252.97:7803/live/1581F5FHC24CB00D6UZ3-66-0-0")
 
-MODEL_PATH = os.getenv("MODEL_PATH", "/home/sente/lumh/PicturesRecog/data/runs/detect/runs/train/yolov8x_aug_loc/weights/best.pt")
+MODEL_PATH = os.getenv("MODEL_PATH", "/home/sente/yolo_rtmp_api/model/runs/train/yolov8x_aug_loc_v2/weights/best.pt")
 
 CONF_THRESH = float(os.getenv("CONF_THRESH", "0.3"))
 FRAME_SKIP = int(os.getenv("FRAME_SKIP", "1"))

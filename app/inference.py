@@ -81,11 +81,22 @@ def inference_loop(model):
 
                 x1, y1, x2, y2 = xyxyn[i]
 
+                cx = (x1 + x2) / 2
+                cy = (y1 + y2) / 2
+
+                box_w = (x2 - x1) * 0.8
+                box_h = (y2 - y1) * 0.8
+
+                x1_new = cx - box_w / 2
+                y1_new = cy - box_h / 2
+                x2_new = cx + box_w / 2
+                y2_new = cy + box_h / 2
+                
                 detections_list.append({
                     "class_id": class_id,
                     "class_name": class_name,
                     "confidence": float(conf[i]),
-                    "bbox": [float(x1), float(y1), float(x2), float(y2)]
+                    "bbox": [float(x1_new), float(y1_new), float(x2_new), float(y2_new)]
                 })
 
         annotated = results[0].plot() if len(results) > 0 else frame

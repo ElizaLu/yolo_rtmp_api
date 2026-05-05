@@ -37,7 +37,6 @@ def start_workers():
             print("[PIPELINE] no armed stream, cannot start workers.")
             return
 
-        # 这时才真正开始跑
         state._stop_event.clear()
 
         mdl = model_mod.load_model()
@@ -86,7 +85,7 @@ def start_pipeline(stream_name: str, rtsp_url: str):
 
         model_mod.load_model()
 
-        print(f"[PIPELINE] armed: streamName={stream_name}, code={code}")
+        print(f"[PIPELINE] armed: streamName={stream_name}")
 
 
 def stop_pipeline():
@@ -147,7 +146,8 @@ def handle_control_message(payload: dict):
 
         elif msg_type == "switch":
             code = payload.get("code")
-            if not code:
+            print(payload.get("code"))
+            if code is None:
                 print("[CTRL] switch missing code")
                 return
             switch_code(stream_name, code)
