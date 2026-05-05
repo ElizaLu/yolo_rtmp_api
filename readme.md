@@ -191,16 +191,6 @@ The project supports systemd-based deployment, enabling:
 
 ---
 
-## Positioning for PhD Applications
-
-- real-time AI system design  
-- stream processing and low-latency inference  
-- model deployment and system integration  
-- edge intelligence  
-- reproducible engineering pipelines  
-
----
-
 ## Future Work
 
 - multi-stream support  
